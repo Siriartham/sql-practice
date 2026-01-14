@@ -1,0 +1,44 @@
+-- =========================
+-- GROUP BY
+-- =========================
+-- GROUP BY is used to perform aggregate functions on grouped rows
+
+SELECT *
+FROM parks_and_recreation.employee_demographics;
+
+SELECT gender
+FROM parks_and_recreation.employee_demographics
+GROUP BY gender;
+
+SELECT 
+    gender,
+    AVG(age) AS avg_age,
+    MIN(age) AS min_age,
+    MAX(age) AS max_age,
+    COUNT(age) AS total_count,
+    SUM(age) AS sum_age
+FROM parks_and_recreation.employee_demographics
+GROUP BY gender;
+
+SELECT 
+    occupation,
+    salary
+FROM parks_and_recreation.employee_salary
+GROUP BY occupation, salary;
+
+-- =========================
+-- ORDER BY
+-- =========================
+-- ORDER BY sorts column values (ASC by default)
+
+SELECT *
+FROM parks_and_recreation.employee_demographics
+ORDER BY age;
+
+SELECT *
+FROM parks_and_recreation.employee_demographics
+ORDER BY age DESC;
+
+SELECT *
+FROM parks_and_recreation.employee_demographics
+ORDER BY first_name ASC, age ASC;
